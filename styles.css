@@ -70,12 +70,17 @@ nav ul li a {
 
 .service {
     padding: 20px;
-    margin: 20px 0;
+    margin: 20px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
+    transition: transform 0.3s;
+}
+
+.service:hover {
+    transform: scale(1.03);
 }
 
 .service img {
@@ -89,11 +94,29 @@ nav ul li a {
     margin-top: 0;
 }
 
-.service a {
+.service .links {
+    display: flex;
+    align-items: center;
+}
+
+.service .links a {
+    display: flex;
+    align-items: center;
     color: #b19f98;
     text-decoration: none;
     margin-right: 10px;
     font-weight: bold;
+    transition: color 0.3s;
+}
+
+.service .links a:hover {
+    color: #8e7e7b;
+}
+
+.service .links img {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
 }
 
 footer {
@@ -121,8 +144,15 @@ footer {
 .footer-section a {
     color: #fff;
     text-decoration: none;
-    display: block;
+    display: flex;
+    align-items: center;
     margin: 5px 0;
+}
+
+.footer-section a img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
 }
 
 .footer-bottom {
