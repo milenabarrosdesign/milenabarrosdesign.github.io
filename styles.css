@@ -46,15 +46,26 @@ nav ul li a {
 .banner {
     margin-top: 70px;
     overflow: hidden;
+    position: relative;
+    height: 400px; /* Ajuste para definir a altura do banner */
 }
 
 .banner-container {
-    display: flex;
+    position: relative;
+    height: 100%;
 }
 
 .banner-container img {
     width: 100%;
-    max-height: 400px;
+    height: 100%; /* Ajuste para garantir que a imagem ocupe toda a altura do banner */
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    object-fit: cover; /* Ajuste para garantir que a imagem cubra toda a área do banner */
+}
+
+.banner-container img.active {
+    opacity: 1;
 }
 
 .service {

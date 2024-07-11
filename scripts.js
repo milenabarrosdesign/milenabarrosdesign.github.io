@@ -1,19 +1,18 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-    const bannerContainer = document.querySelector('.banner-container');
-    const banners = bannerContainer.querySelectorAll('img');
+    const banners = document.querySelectorAll('.banner-container img');
     let currentIndex = 0;
     const totalBanners = banners.length;
     const bannerInterval = 4000; // 4 seconds
 
     function showNextBanner() {
-        banners[currentIndex].style.display = 'none';
+        banners[currentIndex].classList.remove('active');
         currentIndex = (currentIndex + 1) % totalBanners;
-        banners[currentIndex].style.display = 'block';
+        banners[currentIndex].classList.add('active');
     }
 
     // Initialize banner display
     banners.forEach((banner, index) => {
-        banner.style.display = index === 0 ? 'block' : 'none';
+        banner.classList.toggle('active', index === 0);
     });
 
     setInterval(showNextBanner, bannerInterval);
